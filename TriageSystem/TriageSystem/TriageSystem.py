@@ -1,40 +1,42 @@
+## This application runs though a series of questions to determin 
+## if a person needs to see a GP
 
-## This application runs though a series of questions to determin if a person needs to see a GP
-
-# inport the system from the opersting system.
-from os import system, name;
-# for use of a timer inport the sleep function
-from time import sleep;
+# import utilities
+from Utilities import cls, close, splash, countDown,openPage;
 
 
-# clear the screen function this is made to clear the console depending on the os that is being used.
-def cls():
-    # if windows then use 
-    #if(name == 'NT'):
-        system("cls");
+#start the splash screen
+splash();
 
+#start the program.
+print("Welcome to the self triage COVID-19 application!");#.center(50,'#'));
+print("\n");
+print("We will ask a few questions to determin if you should see your GP.");
+print("\n");
+#openPage("https://google.com/");
 
-print("Welcome to the self triage COVID-19 application");
-print("We will ask a few questions to determin weather you should see your GP.")
-print("Are you happy to conintue? y/n:")
-
-happy = input();
+#label .happy;
+happy = input("Are you happy to continue? y/n: ");
 if (happy.capitalize() == 'Y' or happy.capitalize() == "YES"):
+  #question1:  
     cls();
-    print("Do you have a regular cough? y/n:");
-    cough = input();
+    name = input("What is your name? ");
+    cls();
+    #age = input(name + ", what is your age?");
+    #cls();  
+    cough = input("Hi " + name + ", Do you have a regular cough? y/n: ");
     if (cough.capitalize() == 'Y' or cough.capitalize() == "YES"):
         cls();
         print("Please go see your GP.");
     elif (cough.capitalize() == 'N' or cough.capitalize() == "NO"):
         #procced to next question.
         cls();
-        print("Do you have a high tempature?");
-        highTemp = input();
-        if(highTemp.capitalize == 'Y' or highTemp.capitalize == "YES"):
+        #print("Do you have a high tempature? y/n: ");
+        highTemp = input(name + ", Do you have a high tempature? y/n: ");
+        if(highTemp.capitalize() == 'Y' or highTemp.capitalize() == "YES"):
             cls();
             print("Please go see your GP.");
-        elif(highTemp.capitalize == 'N' or highTemp.capitalize == "NO"):
+        elif(highTemp.capitalize() == 'N' or highTemp.capitalize() == "NO"):
             cls();
             print("You should be fine.")
         else: 
@@ -43,9 +45,11 @@ if (happy.capitalize() == 'Y' or happy.capitalize() == "YES"):
     else:
         cls();
         print("An incorrect option has been selected.");
+        
 elif (happy.capitalize() == 'N' or happy.capitalize() == "NO"):
-    print("okay, we will now close the window");
-    sleep(2);
-    system("exit");
+  cls();
+  close();
 else: 
     print("An incorrect option has been selected.");
+
+    

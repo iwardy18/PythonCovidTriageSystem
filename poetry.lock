@@ -1,0 +1,15 @@
+[[package]]
+name = "goto-statement"
+version = "1.2"
+description = "A function decorator, that rewrites the bytecode, to enable goto in Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "ce93796373294ad9e3a1ea4b606ba4770db28b6cc909e9b01c91fdf83aaada6e"
+
+[metadata.files]
+goto-statement = []
